@@ -1,12 +1,6 @@
 #!/bin/bash
-# Bash Script Homework
-# Create monitoring script that checks various system metrics, services, and log. 
-# Look into essential metrics and set the thresholds. How do I set thresholds?
-# Make sure to implement error handling and extract the outputs of the information into metrics.txt file 
 
-#### Approach ####
-# System metrics to check
-# CPU, Memory, Load, Disk space
+# System metrics to check: CPU, Memory, Load, Disk space
 
 # Use functions to collect each metric, with output going to the same file using separate labeling
 
@@ -43,10 +37,6 @@ disk_usage(){
     echo "Metrics for $DATE" >> $METRICS_FILE
     df -h >> $METRICS_FILE
 }
-
-# print date in the beginning of metrics file
-# echo "Metrics for $DATE" >> $METRICS_FILE
-# cpu_metrics
 
 while true; do
     echo "" >> $METRICS_FILE
