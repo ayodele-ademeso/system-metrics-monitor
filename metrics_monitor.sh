@@ -12,35 +12,29 @@ METRICS_FILE="metrics.txt"
 
 #function to get cpu metrics
 cpu_metrics(){
-    DATE=$(date)
-    echo "Metrics for $DATE" >> $METRICS_FILE
     top -b -n 1 | grep '%Cpu' >> $METRICS_FILE
 }
 
 #function to get memory metrics
 memory_metrics(){
-    DATE=$(date)
-    echo "Metrics for $DATE" >> $METRICS_FILE
     free -mh >> $METRICS_FILE
 }
 
 #function to get load average
 load_average(){
-    DATE=$(date)
-    echo "Metrics for $DATE" >> $METRICS_FILE
-    top -b -n 1 | grep "load average:" >> $METRICS_FILE
+    top -b -n 1 | grep "load average:" | awk '{print $11, $12, $13, $14, $15}' >> $METRICS_FILE
 }
 
 #function to get disk space information
 disk_usage(){
-    DATE=$(date)
-    echo "Metrics for $DATE" >> $METRICS_FILE
-    df -h >> $METRICS_FILE
+    df -h | awk 'NR==1; $NF == "/" {print}' >> $METRICS_FILE
 }
 
 while true; do
+    DATE=$(date)
+    echo "   Metrics For $DATE   " >> $METRICS_FILE
     echo "" >> $METRICS_FILE
-    echo "......CPU METRICS......." >> $METRICS_FILE
+    echo "......Cpu Metrics......." >> $METRICS_FILE
     cpu_metrics
     echo "" >> $METRICS_FILE
     echo ".....Load Average......" >> $METRICS_FILE
@@ -54,3 +48,5 @@ while true; do
     echo "" >> $METRICS_FILE
     sleep 60
 done
+
+#set thresholds
