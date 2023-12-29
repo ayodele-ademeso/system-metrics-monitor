@@ -50,3 +50,4 @@ while true; do
 done
 
 #set thresholds
+# create a single function that does the writing to metrics file
