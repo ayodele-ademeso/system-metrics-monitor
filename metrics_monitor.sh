@@ -37,6 +37,7 @@ disk_usage(){
 
 while true; do
     DATE=$(date)
+    echo "$DATE: Monitoring script is running. Press CTRL+C to exit"
     write_to_metrics "   Metrics For $DATE   "
     write_to_metrics ""
 

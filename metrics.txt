@@ -132,3 +132,20 @@ Swap:             0B          0B          0B
 Filesystem      Size  Used Avail Use% Mounted on
 /dev/nvme0n1p4  229G   64G  154G  30% /
 
+   Metrics For Thu Jan 25 09:55:29 GMT 2024   
+
+......Cpu Metrics.......
+%Cpu(s):  0.0 us,  0.4 sy,  0.0 ni, 99.6 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+
+.....Load Average......
+0.00, 0.00   
+
+.....Memory Metrics.....
+               total        used        free      shared  buff/cache   available
+Mem:           7.4Gi       616Mi       5.7Gi       3.0Mi       1.1Gi       6.6Gi
+Swap:          2.0Gi          0B       2.0Gi
+
+.....Disk Usage.....
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/sdc       1007G  8.9G  947G   1% /
+
